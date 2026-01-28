@@ -4,6 +4,7 @@ import SlidingBanner from "./SlidingBanner";
 
 const Bottombar = () => {
   const textRef = useRef(null);
+  const videoRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -14,6 +15,17 @@ const Bottombar = () => {
         opacity: 1,
         duration: 0.9,
         delay: 0.4, // navbar ke baad
+        ease: "expo.out",
+      }
+    );
+    gsap.fromTo(
+      videoRef.current,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        delay: 0.8, // navbar ke baad
         ease: "expo.out",
       }
     );
@@ -42,7 +54,7 @@ const Bottombar = () => {
 
       {/* Banner Already Animated */}
       {/* <SlidingBanner /> */}
-      <div className="relative bg-[royalblue] aspect-video h-[25vh] overflow-hidden rounded-sm">
+      <div ref={videoRef} className="relative bg-[royalblue] aspect-video h-[25vh] overflow-hidden rounded-sm">
         <video
   src="https://cdn.cosmos.so/59cd197e-e711-4fde-a554-6d30327d457d.mp4"
   autoPlay
