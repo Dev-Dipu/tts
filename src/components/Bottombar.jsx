@@ -22,13 +22,13 @@ const Bottombar = () => {
   return (
     <div className="flex justify-between items-end">
       {/* LEFT TEXT */}
-      <div ref={textRef} className="max-w-xl">
+      <div ref={textRef} className="max-w-lg">
         <h1 className="text-4xl font-semibold leading-tight">
-          Shaping Cost. Delivering Value. <br />
+          Shaping Cost. Delivering Value.
           Since 1984.
         </h1>
 
-        <p className="mt-4 text-sm text-gray-600 max-w-md">
+        <p className="mt-4 text-sm text-gray-600 max-w-sm">
           A Leading Dubai-Based Cost Consultancy Delivering Expert Quantity
           Surveying, Project Management, And Value-Driven Construction Solutions
           Across The Middle East.
@@ -36,12 +36,28 @@ const Bottombar = () => {
 
         {/* Button */}
         <button className="mt-5 px-8 py-3 rounded-sm bg-primary text-white text-sm font-medium hover:bg-blue-800 transition cursor-pointer">
-          Explore Our Expertise
+          Explore Expertise
         </button>
       </div>
 
       {/* Banner Already Animated */}
-      <SlidingBanner />
+      {/* <SlidingBanner /> */}
+      <div className="relative bg-[royalblue] aspect-video h-[25vh] overflow-hidden rounded-sm">
+        <video
+  src="https://cdn.cosmos.so/59cd197e-e711-4fde-a554-6d30327d457d.mp4"
+  autoPlay
+  muted
+  loop
+  className="w-full h-full object-cover 
+             brightness-[0.75]
+             contrast-[1.2]
+             saturate-[0.7]
+             sepia-[0.15]
+             hue-rotate-[200deg]"
+/>
+
+      </div>
+
     </div>
   );
 };

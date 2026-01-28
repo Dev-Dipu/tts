@@ -10,7 +10,7 @@ const App = () => {
         {isMobile && <MobileBlock />}
 
       {!isMobile && (
-        <div className='main relative h-screen w-full px-10 py-8 flex flex-col justify-between text-[#111] bg-[url("/images/bg.png")] bg-cover bg-center bg-no-repeat overflow-hidden font-[manrope]'>
+        <div className='main relative h-screen w-full px-16 py-10 flex flex-col justify-between text-[#111] bg-[url("/images/bg.png")] bg-cover bg-center bg-no-repeat overflow-hidden font-[manrope]'>
             <Navbar />
             <CenterStuff />
             <Bottombar />

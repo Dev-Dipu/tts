@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import "@google/model-viewer";
 
 const pointsData = {
     point1: {
@@ -9,8 +10,8 @@ const pointsData = {
         side: "left",
     },
     point2: {
-        top: "50%",
-        left: "43.5%",
+        top: "35%",
+        left: "75%",
         text: "Trusted by public and private sector clients across buildings, infrastructure, interiors and petrochemical projects.",
         side: "right",
     },
@@ -45,7 +46,7 @@ const CenterStuff = () => {
                 scale: 1,
                 duration: 1.2,
                 ease: "expo.out",
-            }
+            },
         );
 
         tl.fromTo(
@@ -58,7 +59,7 @@ const CenterStuff = () => {
                 stagger: 0.15,
                 ease: "back.out(2)",
             },
-            "-=0.6"
+            "-=0.6",
         );
     }, []);
 
@@ -101,7 +102,7 @@ const CenterStuff = () => {
                 scale: 1,
                 duration: 0.55,
                 ease: "expo.out",
-            }
+            },
         );
 
         tl.to(
@@ -116,7 +117,7 @@ const CenterStuff = () => {
                 duration: 0.45,
                 ease: "back.out(1.8)",
             },
-            "-=0.25"
+            "-=0.25",
         );
 
         tl.to(
@@ -126,7 +127,7 @@ const CenterStuff = () => {
                 duration: 0.35,
                 ease: "power2.out",
             },
-            "+=0.05"
+            "+=0.05",
         );
 
         tl.to(
@@ -137,7 +138,7 @@ const CenterStuff = () => {
                 ease: "power3.out",
                 transformOrigin: "left",
             },
-            "-=0.25"
+            "-=0.25",
         );
 
         tl.to(
@@ -148,7 +149,7 @@ const CenterStuff = () => {
                 duration: 0.55,
                 ease: "power3.out",
             },
-            "-=0.3"
+            "-=0.3",
         );
     }, [active]);
 
@@ -171,11 +172,20 @@ const CenterStuff = () => {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[46%] w-[32%] select-none"
         >
             {/* Helmet Image */}
-            <img
+            <model-viewer
                 ref={helmetRef}
-                src="/images/helm.png"
-                alt="Safety Helmet"
-                className="w-full object-contain drop-shadow-2xl"
+                src="/models/helmet.glb"
+                alt="3D Helmet"
+                auto-rotate
+                disable-progress-bar
+                rotation-per-second="16deg"
+                camera-controls={false}
+                disable-zoom
+                environment-image="neutral"
+                shadow-intensity=".8"
+                className="w-full h-[80vh] object-cover"
+                tone-mapping="aces"
+
             />
 
             {/* ================= POINTS ================= */}
@@ -215,30 +225,38 @@ const CenterStuff = () => {
 
                     {/* Corner Brackets + Midlines */}
                     <div ref={borderRef} className="absolute inset-0">
-                        <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2"
+                        <span
+                            className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2"
                             style={{ borderColor: hudColor }}
                         />
-                        <span className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2"
+                        <span
+                            className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2"
                             style={{ borderColor: hudColor }}
                         />
-                        <span className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2"
+                        <span
+                            className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2"
                             style={{ borderColor: hudColor }}
                         />
-                        <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2"
+                        <span
+                            className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2"
                             style={{ borderColor: hudColor }}
                         />
 
                         {/* Mid Lines */}
-                        <span className="absolute top-0 left-1/2 w-10 h-[2px] -translate-x-1/2"
+                        <span
+                            className="absolute top-0 left-1/2 w-10 h-[2px] -translate-x-1/2"
                             style={{ backgroundColor: hudColor }}
                         />
-                        <span className="absolute bottom-0 left-1/2 w-10 h-[2px] -translate-x-1/2"
+                        <span
+                            className="absolute bottom-0 left-1/2 w-10 h-[2px] -translate-x-1/2"
                             style={{ backgroundColor: hudColor }}
                         />
-                        <span className="absolute left-0 top-1/2 h-10 w-[2px] -translate-y-1/2"
+                        <span
+                            className="absolute left-0 top-1/2 h-10 w-[2px] -translate-y-1/2"
                             style={{ backgroundColor: hudColor }}
                         />
-                        <span className="absolute right-0 top-1/2 h-10 w-[2px] -translate-y-1/2"
+                        <span
+                            className="absolute right-0 top-1/2 h-10 w-[2px] -translate-y-1/2"
                             style={{ backgroundColor: hudColor }}
                         />
                     </div>

@@ -168,9 +168,9 @@ const Navbar = () => {
       <div className="absolute left-1/2 transform -translate-x-1/2">
         <button
           ref={logoRef}
-          className="px-8 py-3 rounded-sm bg-gray-100 text-sm font-medium text-gray-700"
+          className="px-8 py-3 rounded-sm text-lg font-semibold text-gray-700"
         >
-          TTS Logo
+          TTS
         </button>
       </div>
 

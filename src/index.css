@@ -6,3 +6,8 @@
     --font-manrope: "Manrope", sans-serif;
     --color-primary: #024BAA;
 }
+
+
+model-viewer::part(default-progress-bar) {
+  display: none;
+}

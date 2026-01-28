@@ -138,7 +138,7 @@ const SlidingBanner = () => {
       </div>
 
       {/* Image Card */}
-      <div className="w-full aspect-video bg-blue-200/60 rounded-sm overflow-hidden">
+      <div className="w-full aspect-video rounded-sm overflow-hidden">
         <img
           ref={imgRef}
           src={images[0]}
